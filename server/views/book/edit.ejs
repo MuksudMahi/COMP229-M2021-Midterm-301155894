@@ -1,0 +1,72 @@
+<!--
+*edit.ejs
+*Muksud Hussain Mahi
+*ID: 301155894
+*June 24, 2021
+-->
+
+<%- include ../partials/header.ejs %>
+
+    <%- include ../partials/main_nav.ejs %>
+        <main class="container">
+            <div class="row">
+                <div class="offset-md-3 col-md-6">
+                    <h1 class="display-4">
+                        <%= title %>
+                    </h1>
+                    <!--Form to process edit-->
+                    <form method="POST" class="form">
+
+                        <!--Edit book name-->
+                        <div class="form-group">
+                            <label for="nameTextField"></label>
+                            <input type="text" class="form-control" id="nameTextField" name="name"
+                                value="<%= book.name %>" placeholder="Enter book name" required>
+                        </div>
+
+                        <!--Add author name-->
+                        <div class="form-group">
+                            <label for="authorTextField"></label>
+                            <input type="text" class="form-control" id="authorTextField" name="author"
+                                value="<%= book.author %>" placeholder="Enter author name" required>
+                        </div>
+
+                        <!--Edit year of publication-->
+                        <div class="form-group">
+                            <label for="publishedTextField"></label>
+                            <input type="number" class="form-control" id="publishedTextField" name="published"
+                                value="<%= book.published %>" placeholder="Enter year of your publication" required>
+                        </div>
+
+                        <!--Edit description-->
+                        <div class="form-group">
+                            <label for="descriptionTextArea"></label>
+                            <textarea type="text" class="form-control" id="descriptionTextArea" name="description"
+                                placeholder="Enter a brief description of the book"
+                                required><%= book.description %></textarea>
+                        </div>
+
+                        <!--Edit price-->
+                        <div class="form-group">
+                            <label for="priceTextField"></label>
+                            <input type="number" class="form-control" id="priceTextField" name="price"
+                                value="<%= book.price %>" placeholder="Enter the book price" required>
+                        </div>
+
+                        <!--Submit and Cancel button-->
+                        <button class="btn btn-primary" type="submit">
+                            <i class="fas fa-edit"></i> Submit
+                        </button>
+
+                        <a href="/book-list" class="btn btn-warning">
+                            <i class="fas fa-undo"></i> Cancel
+                        </a>
+
+                    </form>
+                </div>
+            </div>
+        </main>
+
+        <%- include ../partials/bottom_nav.ejs %>
+
+            <%- include ../partials/footer.ejs %>
